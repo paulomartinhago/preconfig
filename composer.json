@@ -1,5 +1,5 @@
 {
-    "name": "namshi/preconfig",
+    "name": "paulomartinhago/preconfig",
     "description": "This is a port of Namshi/reconfig from JS to PHP",
     "require": {
     },
