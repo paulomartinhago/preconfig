@@ -4,25 +4,25 @@ require __DIR__ . '/../PreConfig.php';
 
 function example()
 {
-    $argument = [
-        'credentials' => [
-            'admin' => [
+    $argument = array(
+        'credentials' => array(
+            'admin' => array(
                 'read'  => true,
                 'write' => true
-            ],
-            'reader' => [
+            ),
+            'reader' => array(
                 'read' => true,
                 'write' => false
-            ]
-        ],
-        'users' => [
-            'someImportantDude' => [
+            )
+        ),
+        'users' => array(
+            'someImportantDude' => array(
                 'username'      => 'him',
                 'password'      => '...',
                 'credentials'   => '{{ credentials.admin }}'
-            ]
-        ]
-    ];
+            )
+        )
+    );
 
     $configs = new \Namshi\PreConfig\PreConfig($argument);
 
@@ -44,25 +44,25 @@ print_r(example());
 
 function exampleMultiLevel()
 {
-    $argument = [
-        'credentials' => [
-            'admin' => [
+    $argument = array(
+        'credentials' => array(
+            'admin' => array(
                 'read'  => true,
                 'write' => true
-            ],
-            'reader' => [
+            ),
+            'reader' => array(
                 'read' => true,
                 'write' => false
-            ]
-        ],
-        'users' => [
-            'someImportantDude' => [
+            )
+        ),
+        'users' => array(
+            'someImportantDude' => array(
                 'username'      => 'him',
                 'password'      => '...',
                 'credentials'   => '{{ credentials.admin }}'
-            ]
-        ]
-    ];
+            )
+        )
+    );
 
     $configs = new \Namshi\PreConfig\PreConfig($argument);
 
@@ -83,13 +83,13 @@ print_r(exampleMultiLevel());
 
 function exampleWithParams()
 {
-    $argument = [
+    $argument = array(
         'hi' => 'Hello, :name'
-    ];
+    );
 
     $configs = new \Namshi\PreConfig\PreConfig($argument);
 
-    return $configs->get('hi', ['name' => 'Ayham']);
+    return $configs->get('hi', array('name' => 'Ayham'));
 }
 
 print_r(exampleWithParams());
@@ -101,25 +101,25 @@ print_r(exampleWithParams());
 
 function exampleWithReference()
 {
-    $argument = [
-        'credentials' => [
-            'admin' => [
+    $argument = array(
+        'credentials' => array(
+            'admin' => array(
                 'read'  => true,
                 'write' => true
-            ],
-            'reader' => [
+            ),
+            'reader' => array(
                 'read' => true,
                 'write' => false
-            ]
-        ],
-        'users' => [
-            'someImportantDude' => [
+            )
+        ),
+        'users' => array(
+            'someImportantDude' => array(
                 'username'      => 'him',
                 'password'      => '...',
                 'credentials'   => '{{ credentials.admin }}'
-            ]
-        ]
-    ];
+            )
+        )
+    );
 
     $configs = new \Namshi\PreConfig\PreConfig($argument);
 

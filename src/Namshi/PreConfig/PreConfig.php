@@ -18,7 +18,7 @@ class PreConfig
     /**
      * @var array
      */
-    protected $configs = [];
+    protected $configs = array();
 
     /**
      * @var int
@@ -30,7 +30,7 @@ class PreConfig
      *
      * @param array $configs
      */
-    public function __construct(array $configs = [])
+    public function __construct(array $configs = array())
     {
         $this->configs  = $configs;
         $this->depth    = 0;
@@ -45,7 +45,7 @@ class PreConfig
      *
      * @return array|mixed|null
      */
-    public function get($key = '', $params = [], $fallbackValue = null)
+    public function get($key = '', $params = array(), $fallbackValue = null)
     {
         $this->depth = 0;
 
@@ -66,7 +66,7 @@ class PreConfig
             return $this->_get(trim($references[0][1]));
         }
 
-        $placeholderToValue = [];
+        $placeholderToValue = array();
 
         foreach ($references as $reference) {
             $placeholderToValue[$reference[0]] = $refVal = $this->_get(trim($reference[1]));
@@ -109,7 +109,7 @@ class PreConfig
         return $fallbackValue;
     }
 
-    protected function _get($key = '', $params = [], $fallbackValue = null)
+    protected function _get($key = '', $params = array(), $fallbackValue = null)
     {
         if (!$key) {
             return $this->configs;
